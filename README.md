@@ -13,4 +13,4 @@ Ambos códigos capturam dados do site [fundamentus.com.br](http://fundamentus.co
 
 **Conteudo extra**
 
- - **diariamente.xlsx**: Planilha já formatada para receber os dados capiturados do script **"diariamente"**
+ - **diariamente.xlsx**: Planilha já formatada para receber os dados capiturados do script **"diariamente.py"**
