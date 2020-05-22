@@ -1,3 +1,6 @@
+![alt text](https://github.com/daniloaspk/scrapingFundamentus/blob/master/images/B3_web_scraping.png)
+
+
 # Web Scraping com dados fundamentalista de ações da B3
 
 ## Para que servem os scripts deste repositório?
