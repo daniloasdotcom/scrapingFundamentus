@@ -14,9 +14,9 @@ fund = webdriver.Chrome(ChromeDriverManager().install())
 fund.get("http://www.fundamentus.com.br/detalhes.php?papel=")
 fund.maximize_window()
 
-j = 1# -Contador de ações atuais e indicador de linha para impressão do nome e data da ação
-h = 1# -Contador de ações antigas e indicador de linha para impressão do nome e data da ação
-y = 1# -Contador de ações sem informações e indicador de linha para impressão do nome e data da ação
+j = 1 # -Contador de ações atuais e indicador de linha para impressão do nome e data da ação
+h = 1 # -Contador de ações antigas e indicador de linha para impressão do nome e data da ação
+y = 1 # -Contador de ações sem informações e indicador de linha para impressão do nome e data da ação
 
 listStocks = []
 listAntigo = []
@@ -52,7 +52,7 @@ for i in listStocks:
             print(' Total de ações averiguadas: ' + str(total))
 
         else:
-            if data == '08/05/2020':
+            if data == '10/06/2020':
                 listAtuais.append(i)
                 j = j + 1
 
@@ -70,7 +70,7 @@ for i in listStocks:
                 total = (h - 1) + (y - 1) + (j - 1)
                 print(' Total de ações averiguadas: ' + str(total))
 
-            elif data != '08/05/2020':
+            elif data != '10/06/2020':
                 listAntigo.append(i)
                 h = h + 1
                 wb = openpyxl.load_workbook('stocks.xlsx')

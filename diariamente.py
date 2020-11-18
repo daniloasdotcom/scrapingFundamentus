@@ -19,15 +19,14 @@ import time
 # 5 - A planilha do arquivo onde inseriremos os dados desatualizados
 
 path = "C:\\Users\\Usuário\\Desktop"
-diaNegocios = "04/06/2020"
+diaNegocios = "13/11/2020"
 file = 'diariamente.xlsx'
 planilha01 = 'Atualizadas'
 planilha02 = 'Desatualizadas'
 
-# A seguir 3 linhas de códifo para que seja feita uma cópia do arquivo e as mesma copia seja colada na área de trabalho
+# A seguir 3 linhas de código para que seja feita uma cópia do arquivo e a mesma copia seja colada na área de trabalho
 original = r'' + str(file)
 alvo = r'' + str(path) + '\\' + str(file)
-
 shutil.copyfile(original, alvo)
 
 # Agora vamos pedir para que o nosso código trabalhe apenas na área de trabalho
@@ -39,7 +38,7 @@ os.chdir(path)
 # os.rename, completa a mudança do nome do arquivo
 
 ultimoDia = diaNegocios.replace('/', '_')
-os.rename(r'diariamente.xlsx', r'' + str(ultimoDia) + '.xlsx')
+os.rename(r'' + str(file), r'' + str(ultimoDia) + '.xlsx')
 
 # A ultima edição antes da soleta de dados é da variável file, para que o arquivo seja reconhecido no restante do código
 
@@ -70,7 +69,7 @@ sheet = wb[str(planilha01)]
 # que foi inicalmente criada como uma lista vazia
 # ao final teremos a lista "listStocks" com todas ações armazenada nela
 
-for i in range(2, 350, 1):
+for i in range(2, 400, 1):
     nameStock = sheet.cell(row=i, column=1).value
     listStocks.append(nameStock)
 
@@ -116,6 +115,7 @@ for i in listStocks:
     # Do contrário o código passa para a próxima açõa de nossa lista...
     try:
         data = fund.find_element_by_xpath('/html/body/div[1]/div[2]/table[1]/tbody/tr[2]/td[4]').text
+        
 
     # Ou seja, Caso o erro ocorra então o "except" imprimirá no console o código abaixo e o código passa para a próxima
     # açõa de nossa lista
@@ -261,6 +261,14 @@ for i in listStocks:
             divbppa = fund.find_element_by_xpath('/html/body/div[1]/div[2]/table[3]/tbody/tr[11]/td[6]').text
             divbppa_n = divbppa.replace(',', '.')
 
+            # P/EBIT
+            p_ebit = fund.find_element_by_xpath('/html/body/div[1]/div[2]/table[3]/tbody/tr[4]/td[4]').text
+            p_ebit_n = p_ebit.replace(',', '.')
+
+            # Div Yield
+            div_yield = fund.find_element_by_xpath('/html/body/div[1]/div[2]/table[3]/tbody/tr[9]/td[4]/span').text
+            div_yield_n = div_yield.replace(',', '.')
+
             # Setor da Empresa
             setor = fund.find_element_by_xpath('/html/body/div[1]/div[2]/table[1]/tbody/tr[4]/td[2]').text
 
@@ -276,7 +284,8 @@ for i in listStocks:
 
             # Os dados são então armazenados numa lista chamada "listDados"
             listDados = [i, empresa, setor, roe_n, vpa_n, pa_n, p_vpa_n, pl_n, lpa_n,
-                         divbppa_n, vard_n, varm_n, var30d_n, var12m_n, var2020_n, var2019_n,
+                         divbppa_n, p_ebit_n, div_yield_n, vard_n, varm_n, var30d_n,
+                         var12m_n, var2020_n, var2019_n,
                          var2018_n, var2017_n, var2016_n, var2015_n, balanco, data]
 
             # Antes de entrar no "for" que irá levar os dados para planilha o contador J recebe mais uma unidade
