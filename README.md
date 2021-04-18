@@ -25,4 +25,4 @@ Ambos códigos capturam dados do site [fundamentus.com.br](http://fundamentus.co
 
 **Speed Coding**
 
-![Watch the video](https://www.youtube.com/watch?v=eIaG5A0IG50&t=69s)
+[![Web Scrapping ](http://img.youtube.com/vi/eIaG5A0IG50/0.jpg)](http://www.youtube.com/watch?v=eIaG5A0IG50 "Speed Coding")
