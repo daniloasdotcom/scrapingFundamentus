@@ -22,7 +22,7 @@ import time
 # 5 - A planilha do arquivo onde inseriremos os dados desatualizados
 
 path = "C:\\Users\\Usuário\\Desktop"
-diaNegocios = "13/11/2020"
+diaNegocios = "01/03/2021"
 file = 'base.xlsx'
 planilha01 = 'Banco_de_Dados'
 planilha02 = 'Desatualizadas'
@@ -74,7 +74,7 @@ sheet = wb[str(planilha01)]
 # que foi inicalmente criada como uma lista vazia
 # ao final teremos a lista "listStocks" com todas ações armazenada nela
 
-for i in range(3, 400, 1):
+for i in range(3, 431, 1):
     nameStock = sheet.cell(row=i, column=3).value
     listStocks.append(nameStock)
 

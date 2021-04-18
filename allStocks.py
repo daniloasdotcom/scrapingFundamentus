@@ -22,7 +22,7 @@ listStocks = []
 listAntigo = []
 listAtuais = []
 
-for i in range(h,915,1):
+for i in range(h,970,1):
     i = str(i)
     path = '//*[@id="test1"]/tbody/tr[' + i + ']/td[1]/a'
     nameStock = fund.find_element_by_xpath(path).text
@@ -52,7 +52,7 @@ for i in listStocks:
             print(' Total de ações averiguadas: ' + str(total))
 
         else:
-            if data == '10/06/2020':
+            if data == '01/03/2021':
                 listAtuais.append(i)
                 j = j + 1
 
@@ -70,7 +70,7 @@ for i in listStocks:
                 total = (h - 1) + (y - 1) + (j - 1)
                 print(' Total de ações averiguadas: ' + str(total))
 
-            elif data != '10/06/2020':
+            elif data != '01/03/2021':
                 listAntigo.append(i)
                 h = h + 1
                 wb = openpyxl.load_workbook('stocks.xlsx')

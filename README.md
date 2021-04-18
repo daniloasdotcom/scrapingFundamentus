@@ -21,3 +21,8 @@ Ambos códigos capturam dados do site [fundamentus.com.br](http://fundamentus.co
  - **diariamente.xlsx**: Planilha já formatada para receber os dados capturados do script **"diariamente.py"**
 
  - **base.xlsx**: Planilha já formatada para receber os dados capturados do script **"geral.py"**
+
+
+**Speed Coding**
+
+![Watch the video](https://www.youtube.com/watch?v=eIaG5A0IG50&t=69s)

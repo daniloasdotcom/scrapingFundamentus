@@ -18,7 +18,7 @@ fileFii = openpyxl.load_workbook('fiis - Copia.xlsx')
 planilha = fileFii['Planilha1']
 
 # Agora passamos um looping for para capiturar os nomes de todos os fundos e armazenaremos cada nome na nossa lista
-for i in range(2, 243, 1):
+for i in range(2, 280, 1):
     fii = fund.find_element_by_xpath('//*[@id="items-wrapper"]/div[' + str(i) + ']/a').text
     nomeFii = str(fii[0:7])
     nomeFii = ''.join(nomeFii)
